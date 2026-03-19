@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install -y git-lfs && git lfs install && rm -rf /v
 
 # Required for building Rust-based Python packages (e.g. base2048 via pyrit/azure-ai-evaluation[redteam])
 ENV RUSTUP_HOME="/home/vscode/.rustup" CARGO_HOME="/home/vscode/.cargo"
+ENV workspaceFolder="/workspace"
 ENV PATH="/home/vscode/.cargo/bin:${PATH}"
 RUN mkdir -p /home/vscode/.rustup /home/vscode/.cargo \
     && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y \
