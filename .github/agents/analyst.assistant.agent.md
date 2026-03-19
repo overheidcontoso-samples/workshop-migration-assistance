@@ -22,6 +22,8 @@ $ARGUMENTS
 
 2. Intake bronlocatie is strikt:
    - Lees in `input-artifacts` mode alleen uit `migrations/input/`.
+   - Gebruik altijd interactieve intakevragen met expliciete keuzes (geen vrije tekst als standaard), bij voorkeur via `vscode_askQuestions`.
+   - Vraag welke bron/scenario in scope is met minimaal deze opties: `Input uit migrations/input`, `Bestaand scenario in migrations/scenarios`, `Handmatig opgeven door gebruiker`.
    - Converteer alle `.docx` intakebestanden uit `migrations/input/` eerst naar Markdown of platte tekst en neem die geconverteerde inhoud expliciet mee in de analyse. Gebruik skills\markdown-converter\skill.md.  Sla de geconverteerde documenten op in `migrations/input/` 
    - Analyseer alle `.dtsx` bestanden uit `migrations/input/` met de `ssis-analyzer` skill:
      1. Voer `overview`, `list-connections`, `list-tasks`, `execution-order`, `extract-sql`, `list-variables`, `variable-refs` en `list-constraints` uit.
@@ -31,7 +33,8 @@ $ARGUMENTS
 3. Leg expliciet vast welke broninformatie en documentatie al dan niet geanalyseerd is, en welke aanvullende observaties uit MCP of repository-analyse komen.
 4. Leid verplichte Silver-transformaties en Gold-uitkomsten af uit aangeleverde SQL en documentatie. Stel geen aparte intakevraag voor Silver/Gold vóór deze analyse.
 5. Leg expliciet vast welke metadata in welke notebook-artifacts moet worden opgenomen, inclusief traceerbaarheid naar bronlogica.
-6. Vraag expliciet om bevestiging van de gebruiker over de naamgeving van `source-system` en `scenario-name` voor het aanmaken van branches, workspaces, en scenario-index. Hanteer de naming convention `<source-system>_<scenario-name>` voor branches en workspaces, tenzij de gebruiker een afwijkende naamgeving expliciet goedkeurt. Leg deze bevestiging
+6. Vraag expliciet om bevestiging van de gebruiker over de naamgeving van `source-system` en `scenario-name` voor het aanmaken van branches, workspaces, en scenario-index. Hanteer de naming convention `<source-system>_<scenario-name>` voor branches en workspaces, tenzij de gebruiker een afwijkende naamgeving expliciet goedkeurt. Leg deze bevestiging vast.  
+- Gebruik altijd interactieve intakevragen met expliciete keuzes (en een optie voor vrije tekst als standaard), bij voorkeur via `vscode_askQuestions`.
 7. Maak of update analyse-artifacts onder `migrations/scenarios/<source-system>/<scenario-name>/docs/analysis/`:
    - `input-manifest.md`
    - `input-description-per-layer.md`
