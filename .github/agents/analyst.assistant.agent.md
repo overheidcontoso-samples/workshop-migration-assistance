@@ -17,7 +17,6 @@ $ARGUMENTS
 ## Instructions
 
 
-
 1. gebruik de skills om een anlyse te maken van de aangeleverde broninformatie en documentatie. Leg expliciet vast welke inzichten uit de bron komen en welke aanvullende observaties uit MCP of repository-analyse.
 
 2. Intake bronlocatie is strikt:
